@@ -1,6 +1,6 @@
 #include "pthread_wrappers.h"
 
-int Pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_routine)(void *), void *arg)
+int Pthread_create(pthread_t* thread, const pthread_attr_t* attr, void* (*start_routine)(void*), void* arg)
 {
     int status = pthread_create(thread, NULL, start_routine, NULL);
     if (!status)
@@ -11,7 +11,7 @@ int Pthread_create(pthread_t *thread, const pthread_attr_t *attr, void *(*start_
     }
 }
 
-int Pthread_join(pthread_t thread, void **retval)
+int Pthread_join(pthread_t thread, void** retval)
 {
     int status = pthread_join(thread, NULL);
     if (status)
