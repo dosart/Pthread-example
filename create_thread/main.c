@@ -1,32 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <pthread.h>
+#include "pthread_wrappers.h"
 
-#define ERROR_CREATE_THREAD -10
-#define ERROR_JOIN_THREAD -11
-#define SUCCESS 2
-
-void *hello_world(void *args) {
+void *hello_world(void *args)
+{
   printf("Hello from child thread!\n");
-  return SUCCESS;
+  return 0;
 }
 
-int main() {
-  int return_from_thread = 0;
-  int status = 0;
-
+int main()
+{
   pthread_t new_thread;
-  status = pthread_create(&new_thread, NULL, hello_world, NULL);
-  if (status!=0) {
-    printf("main error: can't create thread, status = %d\n", status);
-    exit(ERROR_CREATE_THREAD);
-  }
+  Pthread_create(&new_thread, NULL, hello_world, NULL);
 
-  status = pthread_join(new_thread, (void**)&return_from_thread);
-  if (status!=0) {
-    printf("main error: can't join thread, status = %d\n", status);
-    exit(ERROR_JOIN_THREAD);
-  }
+  int return_from_thread = 0;
+  Pthread_join(new_thread, (void **)&return_from_thread);
 
   printf("Hello from main thread\n");
   printf("%d", return_from_thread);
