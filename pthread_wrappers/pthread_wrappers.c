@@ -2,8 +2,8 @@
 
 int Pthread_create(pthread_t* thread, const pthread_attr_t* attr, void* (*start_routine)(void*), void* arg)
 {
-    int status = pthread_create(thread, NULL, start_routine, NULL);
-    if (!status)
+    int status = pthread_create(thread, attr, start_routine, arg);
+    if (status != 0)
     {
         errno = status;
         perror("pthread_create");
@@ -11,10 +11,10 @@ int Pthread_create(pthread_t* thread, const pthread_attr_t* attr, void* (*start_
     }
 }
 
-int Pthread_join(pthread_t thread, void** retval)
+int Pthread_join(pthread_t thread, void** thread_return)
 {
-    int status = pthread_join(thread, NULL);
-    if (status)
+    int status = pthread_join(thread, thread_return);
+    if (status != 0)
     {
         errno = status;
         perror("pthread_join");
