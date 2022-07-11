@@ -14,8 +14,13 @@ set(THREAD_WITH_ARGS "thread_with_args")
 add_executable(${THREAD_WITH_ARGS} thread_with_args.c)
 target_link_libraries(${THREAD_WITH_ARGS} ${THREAD_WRAPPERS_LIB})	
 set_target_properties(${THREAD_WITH_ARGS} PROPERTIES C_STANDARD 11 C_STANDARD_REQUIRED ON)
-        
-        
+
+set(THREAD_ARRAY "threads_array")
+add_executable(${THREAD_ARRAY} threads_array.c)
+target_link_libraries(${THREAD_ARRAY} ${THREAD_WRAPPERS_LIB})	
+set_target_properties(${THREAD_ARRAY} PROPERTIES C_STANDARD 11 C_STANDARD_REQUIRED ON)
+
+      
 add_compile_options(
         -Werror
 
