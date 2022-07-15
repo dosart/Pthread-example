@@ -21,3 +21,14 @@ int Pthread_join(pthread_t thread, void** thread_return)
         return -1;
     }
 }
+
+int Pthread_mutex_init(pthread_mutex_t* mutex, const pthread_mutexattr_t* attr)
+{
+    int status = pthread_mutex_init(mutex, attr);
+    if (status != 0)
+    {
+        errno = status;
+        perror("pthread_mutex_init");
+        return -1;
+    }
+}
