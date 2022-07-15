@@ -47,3 +47,27 @@ int Pthread_mutex_destroy(pthread_mutex_t* mutex)
     }
     return status;
 }
+
+int Pthread_mutex_lock(pthread_mutex_t* mutex)
+{
+    int status = pthread_mutex_lock(mutex);
+    if (status != 0)
+    {
+        errno = status;
+        perror("pthread_mutex_lock");
+        return -1;
+    }
+    return status;
+}
+
+int Pthread_mutex_unlock(pthread_mutex_t* mutex)
+{
+    int status = pthread_mutex_unlock(mutex);
+    if (status != 0)
+    {
+        errno = status;
+        perror("pthread_mutex_unlock");
+        return -1;
+    }
+    return status;
+}
