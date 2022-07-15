@@ -9,6 +9,7 @@ int Pthread_create(pthread_t* thread, const pthread_attr_t* attr, void* (*start_
         perror("pthread_create");
         return -1;
     }
+    return status;
 }
 
 int Pthread_join(pthread_t thread, void** thread_return)
@@ -20,6 +21,7 @@ int Pthread_join(pthread_t thread, void** thread_return)
         perror("pthread_join");
         return -1;
     }
+    return status;
 }
 
 int Pthread_mutex_init(pthread_mutex_t* mutex, const pthread_mutexattr_t* attr)
@@ -31,4 +33,17 @@ int Pthread_mutex_init(pthread_mutex_t* mutex, const pthread_mutexattr_t* attr)
         perror("pthread_mutex_init");
         return -1;
     }
+    return status;
+}
+
+int Pthread_mutex_destroy(pthread_mutex_t* mutex)
+{
+    int status = pthread_mutex_destroy(mutex);
+    if (status != 0)
+    {
+        errno = status;
+        perror("pthread_mutex_destroy");
+        return -1;
+    }
+    return status;
 }
