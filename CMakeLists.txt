@@ -5,3 +5,4 @@ project(${PROJECT_NAME} VERSION 0.0.1 LANGUAGES C)
 
 add_subdirectory(create_thread)
 add_subdirectory(pthread_wrappers)
+add_subdirectory(data_structures)
