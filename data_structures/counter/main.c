@@ -7,8 +7,6 @@ void* inc(void* arg)
     counter_t* counter = (counter_t*)arg;
     if (counter != NULL)
         counter_increment(counter);
-    else
-        printf("Counter is NULL\n");
 }
 
 int main()
