@@ -1,5 +1,5 @@
-#ifndef COUNTER_H
-#define COUNTER_H
+#ifndef SIMPLE_COUNTER_H
+#define SIMPLE_COUNTER_H
 
 #include "pthread_wrappers.h"
 
