@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-set(PROJECT_NAME counter)
+set(PROJECT_NAME simple_counter)
 set(THREAD_WRAPPERS_LIB pthread_wrappers)
 project(${PROJECT_NAME} VERSION 0.0.1 LANGUAGES C)
 
