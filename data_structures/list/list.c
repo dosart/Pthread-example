@@ -14,8 +14,8 @@ void list_destroy(list_t* list)
     if (list == NULL)
         return;
 
-    list_t* cur = list->head;
-    list_t* tmp = NULL;
+    node_t* cur = list->head;
+    node_t* tmp = NULL;
     while (cur)
     {
         tmp = cur->next;
@@ -51,7 +51,7 @@ node_t* list_lookup(list_t* list, int key)
 
     Pthread_mutex_lock(&list->lock);
 
-    list_t* cur = list->head;
+    node_t* cur = list->head;
     while (cur)
     {
         if (cur->key == key)

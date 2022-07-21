@@ -10,7 +10,7 @@
 typedef struct __node_t
 {
     int key;
-    __node_t* next;
+    struct __node_t* next;
 } node_t;
 
 typedef struct __list_t
