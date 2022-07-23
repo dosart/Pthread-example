@@ -71,3 +71,27 @@ int Pthread_mutex_unlock(pthread_mutex_t* mutex)
     }
     return status;
 }
+
+int Pthread_cond_init(pthread_cond_t* cond, const pthread_condattr_t* attr)
+{
+    int status = pthread_cond_init(cond, attr);
+    if (status != 0)
+    {
+        errno = status;
+        perror("pthread_cond_init");
+        return -1;
+    }
+    return status;
+}
+
+int Pthread_cond_destroy(pthread_cond_t* cond)
+{
+    int status = pthread_cond_destroy(cond);
+    if (status != 0)
+    {
+        errno = status;
+        perror("pthread_cond_destroy");
+        return -1;
+    }
+    return status;
+}
