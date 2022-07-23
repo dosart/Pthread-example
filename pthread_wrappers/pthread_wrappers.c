@@ -95,3 +95,27 @@ int Pthread_cond_destroy(pthread_cond_t* cond)
     }
     return status;
 }
+
+int Pthread_cond_wait(pthread_cond_t* cond, pthread_mutex_t* mutex)
+{
+    int status = pthread_cond_wait(cond, mutex);
+    if (status != 0)
+    {
+        errno = status;
+        perror("pthread_cond_wait");
+        return -1;
+    }
+    return status;
+}
+
+int Pthread_cond_signal(pthread_cond_t* cond)
+{
+    int status = pthread_cond_signal(cond);
+    if (status != 0)
+    {
+        errno = status;
+        perror("pthread_cond_signal");
+        return -1;
+    }
+    return status;
+}

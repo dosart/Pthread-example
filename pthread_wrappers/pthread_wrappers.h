@@ -21,4 +21,8 @@ int Pthread_cond_init(pthread_cond_t* cond, const pthread_condattr_t* attr);
 
 int Pthread_cond_destroy(pthread_cond_t* cond);
 
+int Pthread_cond_wait(pthread_cond_t* cond, pthread_mutex_t* mutex);
+
+int Pthread_cond_signal(pthread_cond_t* cond);
+
 #endif
