@@ -28,7 +28,7 @@ void* producer(void* arg)
 
         put_value(10);
 
-        pthread_cond_signal(&fill);
+        Pthread_cond_signal(&fill);
         Pthread_mutex_unlock(&mutex);
     }
 }
@@ -50,7 +50,7 @@ void* consumer(void* arg)
 
         int value = get_value();
 
-        pthread_cond_signal(&empty);
+        Pthread_cond_signal(&empty);
         Pthread_mutex_unlock(&mutex);
     }
 }
