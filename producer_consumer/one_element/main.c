@@ -5,8 +5,9 @@
 
 #define COUNT 10
 
-pthread_cond_t empty, fill;
-pthread_mutex_t mutex;
+pthread_cond_t empty = PTHREAD_COND_INITIALIZER;
+pthread_cond_t fill = PTHREAD_COND_INITIALIZER;
+pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 
 unsigned int count = 0;
 int buffer;
