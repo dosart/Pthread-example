@@ -4,8 +4,8 @@
 #include <stdio.h>
 #include <string.h>
 
-#define BAD_CAST -10;
-#define STRING_IS_NULL -11;
+#define BAD_CAST -10
+#define STRING_IS_NULL -11
 
 typedef struct __args
 {
