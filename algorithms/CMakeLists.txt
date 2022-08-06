@@ -9,6 +9,11 @@ set(SUM "sum")
 add_executable(${SUM} sum.c)
 target_link_libraries(${SUM} ${THREAD_WRAPPERS_LIB})	
 set_target_properties(${SUM} PROPERTIES C_STANDARD 11 C_STANDARD_REQUIRED ON)
+
+set(SUM "min")
+add_executable(${SUM} min.c)
+target_link_libraries(${SUM} ${THREAD_WRAPPERS_LIB})	
+set_target_properties(${SUM} PROPERTIES C_STANDARD 11 C_STANDARD_REQUIRED ON)
       
 add_compile_options(
         -Werror
